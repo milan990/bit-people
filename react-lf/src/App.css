@@ -19,6 +19,7 @@ header {
   align-items:center;
   padding: 0 12%;
   margin-bottom: 2%;
+  height: 100px;
 }
 
 /* header a {
@@ -87,4 +88,9 @@ footer {
 
 .grid {
   margin: 0 auto;
+}
+.card{
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
