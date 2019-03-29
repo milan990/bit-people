@@ -38,6 +38,7 @@ footer {
 .avatar {
   border-radius: 50%;
   /* border: lightcoral 1px solid; */
+
 }
 
 .user{
@@ -82,4 +83,8 @@ footer {
 
 .row {
   width: 80%;
+}
+
+.grid {
+  margin: 0 auto;
 }

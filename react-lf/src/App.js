@@ -26,7 +26,9 @@ class App extends Component {
     return (
       <>
         <Header />
-        <Main users={this.state.users1} />
+        <div className="row grid">
+          <Main users={this.state.users1} />
+        </div>
 
         <Footer />
       </>

@@ -13,9 +13,11 @@ const fetchUserData = () => {
                     elem.email,
                     elem.dob.date,
                     elem.picture.thumbnail,
+                    elem.picture.large,
                     elem.login.username,
                 )
             ));
+            console.log(user)
             return obj;
         })
 }
