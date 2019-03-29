@@ -1,0 +1,85 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+/* .container {
+  width: 80%;
+  margin: 0 auto;
+} */
+
+header {
+  background-color: brown;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  padding: 0 12%;
+  margin-bottom: 2%;
+}
+
+/* header a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+} */
+
+footer {
+  background-color: brown;
+  color: white;
+  text-align: left;
+  padding: 0.5%;
+  margin-top: 1%;
+}
+
+.avatar {
+  border-radius: 50%;
+  /* border: lightcoral 1px solid; */
+}
+
+.user{
+  display: flex;
+  align-items:center;
+  padding-left: 1%;
+  border-bottom: solid 1px lightgrey;
+}
+
+/* .female {
+  background-color: pink;
+} */
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.search {
+  margin-bottom: 0.5%;
+  padding-left: 11%;
+}
+
+.search input {
+  border: none;
+  border-bottom: solid 1px gray;
+  width: 85%;
+  font-size: 1.5em;
+}
+
+.user>div{
+  margin-right: 1%;
+}
+
+.user div p {
+  margin: 3%;
+}
+
+.user div :first-child {
+  font-weight: bold;
+}
+
+.row {
+  width: 80%;
+}
