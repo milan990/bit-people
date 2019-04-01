@@ -4,14 +4,20 @@ import fetchUserData from "./services/fetchUserData"
 import { Header } from './components/header';
 import { Footer } from './components/footer';
 import Main from './services/main';
-
+import GridView from "./components/gridview"
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users1: []
+      users1: [],
+      listView: true
     }
+  }
+  gridView = (event) => {
+    this.setState({
+      listView: !this.state.listView
+    })
   }
   componentDidMount() {
     fetchUserData()
@@ -22,14 +28,14 @@ class App extends Component {
       });
   }
 
+
   render() {
     return (
       <>
-        <Header />
+        <Header event={this.gridView} />
         <div className="row grid">
-          <Main users={this.state.users1} />
+          <Main users={this.state.users1} list={this.state.listView} />
         </div>
-
         <Footer />
       </>
     );

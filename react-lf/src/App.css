@@ -20,6 +20,7 @@ header {
   padding: 0 12%;
   margin-bottom: 2%;
   height: 100px;
+  justify-content: space-between;
 }
 
 /* header a {
@@ -93,4 +94,7 @@ footer {
   width: 70%;
   margin: 0 auto;
   margin-bottom: 30px;
+}
+h2{
+  text-align: center;
 }
