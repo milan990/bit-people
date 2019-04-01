@@ -11,12 +11,17 @@ class App extends Component {
     super(props);
     this.state = {
       users1: [],
-      listView: true
+      listView: localStorage.getItem('state') === null || undefined ? true : JSON.parse(localStorage.getItem('state'))
+
     }
   }
   gridView = (event) => {
-    this.setState({
-      listView: !this.state.listView
+    this.setState((item) => {
+      localStorage.setItem('state', JSON.stringify(!item.listView))
+
+
+      return { listView: !this.state.listView }
+
     })
   }
   componentDidMount() {
@@ -31,6 +36,7 @@ class App extends Component {
         })
       });
   }
+
 
   render() {
     return (
