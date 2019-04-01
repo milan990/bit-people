@@ -20,6 +20,10 @@ class App extends Component {
     })
   }
   componentDidMount() {
+    this.fetchUsers();
+  }
+
+  fetchUsers = () => {
     fetchUserData()
       .then((users) => {
         this.setState({
@@ -28,11 +32,10 @@ class App extends Component {
       });
   }
 
-
   render() {
     return (
       <>
-        <Header event={this.gridView} />
+        <Header event={this.gridView} reload={this.fetchUsers} />
         <div className="row grid">
           <Main users={this.state.users1} list={this.state.listView} />
         </div>
