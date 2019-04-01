@@ -4,14 +4,14 @@ import fetchUserData from "./services/fetchUserData"
 import { Header } from './components/header';
 import { Footer } from './components/footer';
 import Main from './services/main';
-import GridView from "./components/gridview"
+import GridView from "./components/gridview";
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       users1: [],
-      listView: localStorage.getItem('state') === null || undefined ? true : JSON.parse(localStorage.getItem('state'))
+      listView: !!(JSON.parse(localStorage.getItem('state'))) /*localStorage.getItem('state') === null || undefined ? true : JSON.parse(localStorage.getItem('state'))*/
 
     }
   }
@@ -24,7 +24,8 @@ class App extends Component {
 
     })
   }
-  componentDidMount() {
+  
+componentDidMount() {
 this.fetchUsers()
   }
 
@@ -43,6 +44,7 @@ render() {
     <>
       <Header event={this.gridView} reload={this.fetchUsers} />
       <div className="row grid">
+        <input type="search" className="col-10 input"></input>
         <Main users={this.state.users1} list={this.state.listView} />
       </div>
       <Footer />
