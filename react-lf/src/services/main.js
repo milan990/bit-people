@@ -10,7 +10,7 @@ const Main = (props) => {
     const postsListJSX = props.users.map(user => (
 
         <div className={`${user.gender} users col-12`} key={user.loginName} >
-            <div class="card blue-grey darken-1">
+            <div className="card blue-grey darken-1">
                 <div className="card-content white-text">
                     <img className='avatar' src={user.picture} />
                     <span className="card-title">{user.name}</span>
@@ -27,12 +27,12 @@ const Main = (props) => {
     ))
     const postsGridJSX = props.users.map(user => (
         <div className={`${user.gender} users col-4`} key={user.loginName} >
-            <div class="card">
-                <div class="card-image">
+            <div className="card">
+                <div className="card-image">
                     <img className='avatar' src={user.picture2} />
-                    <span class="card-title">{user.name}</span>
+                    <span className="card-title">{user.name}</span>
                 </div>
-                <div class={`card-content ${user.gender}`}>
+                <div className={`card-content ${user.gender}`}>
                     <p> &#9993; {user.email}</p>
                     <p>&#127874; {user.dobDate}</p>
                 </div>

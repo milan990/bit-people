@@ -17,7 +17,6 @@ const fetchUserData = () => {
                     elem.login.username,
                 )
             ));
-            console.log(user)
             return obj;
         })
 }

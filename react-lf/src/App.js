@@ -11,8 +11,8 @@ class App extends Component {
     super(props)
     this.state = {
       users1: [],
-      listView: !!(JSON.parse(localStorage.getItem('state'))) /*localStorage.getItem('state') === null || undefined ? true : JSON.parse(localStorage.getItem('state'))*/
-
+      listView: !!(JSON.parse(localStorage.getItem('state'))), /*localStorage.getItem('state') === null || undefined ? true : JSON.parse(localStorage.getItem('state'))*/
+      nameSearch:""
     }
   }
   gridView = (event) => {
@@ -31,20 +31,26 @@ this.fetchUsers()
 
 fetchUsers = () => {
   fetchUserData()
-    .then((users) => {
-      this.setState({
-        users1: users
-      })
+  .then((users) => {
+    this.setState({
+      users1: users
     })
+  })
 }
-
-
+searchUsers=(event)=>{
+ this.setState({
+   nameSearch:event.target.value
+ })
+ this.state.users1.filter((user)=>{
+  return user.name.indexOf(this.state.nameSearch)!==-1
+})
+}
 render() {
   return (
     <>
       <Header event={this.gridView} reload={this.fetchUsers} />
       <div className="row grid">
-        <input type="search" className="col-10 input"></input>
+        <input  onChange={this.searchUsers} type="search" className="col-10 input"></input>
         <Main users={this.state.users1} list={this.state.listView} />
       </div>
       <Footer />
