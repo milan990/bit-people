@@ -26,18 +26,19 @@ const Main = (props) => {
 
     ))
     const postsGridJSX = props.users.map(user => (
-        <div className="col-4">
+        <div className={`${user.gender} users col-4`} key={user.loginName} >
             <div class="card">
                 <div class="card-image">
                     <img className='avatar' src={user.picture2} />
                     <span class="card-title">{user.name}</span>
                 </div>
-                <div class="card-content">
+                <div class={`card-content ${user.gender}`}>
                     <p> &#9993; {user.email}</p>
                     <p>&#127874; {user.dobDate}</p>
                 </div>
             </div>
         </div>
+
 
     )
     )

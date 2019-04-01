@@ -25,30 +25,30 @@ class App extends Component {
     })
   }
   componentDidMount() {
-    this.fetchUsers();
+this.fetchUsers()
   }
 
-  fetchUsers = () => {
-    fetchUserData()
-      .then((users) => {
-        this.setState({
-          users1: users
-        })
-      });
-  }
+fetchUsers = () => {
+  fetchUserData()
+    .then((users) => {
+      this.setState({
+        users1: users
+      })
+    })
+}
 
 
-  render() {
-    return (
-      <>
-        <Header event={this.gridView} reload={this.fetchUsers} />
-        <div className="row grid">
-          <Main users={this.state.users1} list={this.state.listView} />
-        </div>
-        <Footer />
-      </>
-    );
-  }
+render() {
+  return (
+    <>
+      <Header event={this.gridView} reload={this.fetchUsers} />
+      <div className="row grid">
+        <Main users={this.state.users1} list={this.state.listView} />
+      </div>
+      <Footer />
+    </>
+  )
+} 
 }
 
 export default App;
