@@ -14,8 +14,8 @@ const Main = (props) => {
                 <div className="card-content white-text">
                     <img className='avatar' src={user.picture} />
                     <span className="card-title">{user.name}</span>
-                    <p> {user.email}</p>
-                    <p>{user.dobDate}</p>
+                    <p> &#9993; {user.email}</p>
+                    <p> &#127874; {user.dobDate}</p>
                     {/* <p></p> */}
                 </div>
             </div>
@@ -42,9 +42,9 @@ const Main = (props) => {
     )
     )
     if (props.list === true) {
-        return postsGridJSX
-    } else {
         return postsListJSX
+    } else {
+        return postsGridJSX
     }
 }
 
