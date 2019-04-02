@@ -13,13 +13,12 @@ class App extends Component {
             users1: [],
             users2: [],
             listView: !!(JSON.parse(localStorage.getItem('state'))), /*localStorage.getItem('state') === null || undefined ? true : JSON.parse(localStorage.getItem('state'))*/
-            nameSearch: ""
+            inputVisible: false,
         }
     }
     GridView = (event) => {
         this.setState((item) => {
             localStorage.setItem('state', JSON.stringify(!item.listView))
-
 
             return { listView: !this.state.listView }
 
@@ -53,8 +52,9 @@ class App extends Component {
                 <Header event={this.gridView} reload={this.fetchUsers} />
                 <div className="row grid">
                     <input onChange={this.searchUsers} type="search" className="col-10 input"></input>
-                    <Main users={this.state.users2} list={this.state.listView} />
                 </div>
+                <Main users={this.state.users2} list={this.state.listView} />
+
                 <Footer />
             </>
         )

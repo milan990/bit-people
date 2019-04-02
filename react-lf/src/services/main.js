@@ -7,8 +7,19 @@ import React from 'react';
 
 const Main = (props) => {
 
-    const postsListJSX = props.users.map(user => (
+    if (!props.users.length) {
+        return (
+            <>
+                <div>
+                    <br />
+                    <h1>Loading...</h1>
+                </div>
+                <div class="spinner"></div>
+            </>
+        )
+    }
 
+    const postsListJSX = props.users.map(user => (
         <div className={`${user.gender} users col-12`} key={user.loginName} >
             <div className="card blue-grey darken-1">
                 <div className="card-content white-text">
