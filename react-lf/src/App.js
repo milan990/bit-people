@@ -15,6 +15,7 @@ class App extends Component {
       listView: !!(JSON.parse(localStorage.getItem('state'))), /*localStorage.getItem('state') === null || undefined ? true : JSON.parse(localStorage.getItem('state'))*/
       inputVisible: true,
       about: true,
+      time: parseInt((new Date().getTime() / 1000).toFixed(0))
     }
   }
   gridView = (event) => {
@@ -24,6 +25,22 @@ class App extends Component {
       return { listView: !this.state.listView }
 
     })
+  }
+
+  calculateTime = () => {
+    const newTime = parseInt((new Date().getTime() / 1000).toFixed(0));
+    const dif = newTime - this.state.time;
+    this.state.time = newTime;
+
+    if (dif > 3600) {
+      return "" + (dif / 3600).toFixed(0) + " hours"
+    }
+    else if (dif > 60) {
+      return "" + (dif / 60).toFixed(0) + " minutes"
+    }
+    else
+      return "" + (dif).toFixed(0) + " seconds"
+
   }
 
 
@@ -37,9 +54,10 @@ class App extends Component {
         this.setState({
           users1: users,
           users2: users,
-          inputVisible: false
-        })
+          inputVisible: false,
 
+        })
+        this.calculateTime()
       })
   }
 
@@ -66,7 +84,7 @@ class App extends Component {
           <input hidden={this.state.inputVisible} onChange={this.searchUsers} type="search" className="input" placeholder="Search" ></input>
           <Main users={this.state.users2} list={this.state.listView} users1={this.state.users1} />
         </div>
-        <Footer />
+        <Footer time={this.calculateTime()} />
       </>
     )
   }
