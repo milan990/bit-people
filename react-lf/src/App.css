@@ -104,16 +104,12 @@ h2{
 .female{
   background: #ffebee;
 }
-.input{
-  margin: 0 auto;
-  
-}
 
 .spinner {
   width: 40px;
   height: 40px;
   background-color: #333;
-
+  
   margin: 100px auto;
   -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
   animation: sk-rotateplane 1.2s infinite ease-in-out;
@@ -136,4 +132,19 @@ h2{
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
+}
+.About{
+  text-align: center;
+}
+p{
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.3em;
+}
+.searchRes{
+  text-align: center;
+  
+}
+.noResult{
+  margin: 0 auto;
 }

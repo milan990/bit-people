@@ -3,7 +3,7 @@ import React from "react"
 const About = (props) => (
     <>
         <div>
-            <h1>About</h1>
+            <h1 className="About">About</h1>
             <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
                 It has roots in a piece of classical Latin literature from 45 BC,
                  making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,

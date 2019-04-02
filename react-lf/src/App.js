@@ -5,7 +5,6 @@ import { Header } from './components/header';
 import { Footer } from './components/footer';
 import Main from './services/main';
 import About from './components/About';
-import GridView from "./components/gridview";
 
 class App extends Component {
   constructor(props) {
@@ -54,6 +53,7 @@ class App extends Component {
     this.setState({
       users2: this.state.users1.filter((user) => (user.name.indexOf(event.target.value) !== -1))
     })
+
   }
   render() {
     return (
@@ -63,8 +63,8 @@ class App extends Component {
           <About />
         </div>
         <div hidden={!this.state.about} className="row grid">
-          <input hidden={this.state.inputVisible} onChange={this.searchUsers} type="search" className="col-10 input" ></input>
-          <Main users={this.state.users2} list={this.state.listView} />
+          <input hidden={this.state.inputVisible} onChange={this.searchUsers} type="search" className="input" placeholder="Search" ></input>
+          <Main users={this.state.users2} list={this.state.listView} users1={this.state.users1} />
         </div>
         <Footer />
       </>

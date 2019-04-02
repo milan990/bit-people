@@ -7,14 +7,22 @@ import React from 'react';
 
 const Main = (props) => {
 
-    if (!props.users.length) {
+    if (!props.users1.length) {
         return (
             <>
                 <div>
                     <br />
                     <h1>Loading...</h1>
                 </div>
-                <div class="spinner"></div>
+                <div className="spinner"></div>
+            </>
+        )
+    }
+    if (!props.users.length) {
+        return (
+            <>
+                <img className="noResult" src="https://i.ebayimg.com/images/g/fFsAAOSwroZas79w/s-l300.jpg" />
+                <h2 className="col-12">We couldn't find any people matching your search</h2>
             </>
         )
     }
@@ -23,10 +31,10 @@ const Main = (props) => {
         <div className={`${user.gender} users col-12`} key={user.loginName} >
             <div className="card blue-grey darken-1">
                 <div className="card-content white-text">
-                    <img className='avatar' src={user.picture} />
+                    <img className='avatar' src={user.picture} alt="users" />
                     <span className="card-title">{user.name}</span>
-                    <p> &#9993; {user.email}</p>
-                    <p> &#127874; {user.dobDate}</p>
+                    <p><span> &#9993;</span> {user.email}</p>
+                    <p><span> &#127874;</span> {user.dobDate}</p>
                     {/* <p></p> */}
                 </div>
             </div>
@@ -40,7 +48,7 @@ const Main = (props) => {
         <div className={`${user.gender} users col-4`} key={user.loginName} >
             <div className="card">
                 <div className="card-image">
-                    <img className='avatar' src={user.picture2} />
+                    <img className='avatar' src={user.picture2} alt="users" />
                     <span className="card-title">{user.name}</span>
                 </div>
                 <div className={`card-content ${user.gender}`}>
@@ -49,6 +57,7 @@ const Main = (props) => {
                 </div>
             </div>
         </div>
+
 
 
     )
