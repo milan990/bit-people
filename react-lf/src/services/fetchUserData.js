@@ -3,7 +3,7 @@ import userObj from '../entities/userObj'
 
 
 const fetchUserData = () => {
-    return fetch("https://randomuser.me/api/?results=15")
+    return fetch("https://randomuser.me/api/?results=25")
         .then(users => users.json())
         .then((user) => {
             const obj = user.results.map(elem => (

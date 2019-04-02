@@ -51,7 +51,7 @@ class App extends Component {
             <>
                 <Header event={this.gridView} reload={this.fetchUsers} />
                 <div className="row grid">
-                    <input onChange={this.searchUsers} type="search" className="col-10 input"></input>
+                    <input onChange={this.searchUsers} type="search" className="col-10 input" ></input>
                 </div>
                 <Main users={this.state.users2} list={this.state.listView} />
 

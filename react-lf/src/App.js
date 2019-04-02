@@ -67,9 +67,24 @@ class App extends Component {
     })
   }
 
+
+  genStatistic = () => {
+    let g = {
+      male: 0,
+      female: 0
+    }
+    this.state.users1.forEach(elem => {
+      if (elem.gender == 'male')
+        g.male++;
+      else
+        g.female++
+    });
+    return g;
+  }
+
   searchUsers = (event) => {
     this.setState({
-      users2: this.state.users1.filter((user) => (user.name.indexOf(event.target.value) !== -1))
+      users2: this.state.users1.filter((user) => (user.name.toLowerCase().includes(event.target.value.toLowerCase())))
     })
 
   }
@@ -82,6 +97,7 @@ class App extends Component {
         </div>
         <div hidden={!this.state.about} className="row grid">
           <input hidden={this.state.inputVisible} onChange={this.searchUsers} type="search" className="input" placeholder="Search" ></input>
+          <p className="genStat offset-8">Male: {this.genStatistic().male} Female: {this.genStatistic().female}</p>
           <Main users={this.state.users2} list={this.state.listView} users1={this.state.users1} />
         </div>
         <Footer time={this.calculateTime()} />
