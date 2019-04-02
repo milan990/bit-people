@@ -40,8 +40,8 @@ class App extends Component {
       })
   }
   searchUsers = (event) => {
-    this.state.users2 = this.state.users1.filter((user) => {
-      return user.name.indexOf(event.target.value) !== -1
+    this.setState({
+      users2: this.state.users1.filter((user) => (user.name.indexOf(event.target.value) !== -1))
     })
   }
   render() {
@@ -59,3 +59,9 @@ class App extends Component {
 }
 
 export default App;
+
+// (this.state.users1.filter((user) => {
+//   return user.name.indexOf(event.target.value) !== -1
+// }
+// )
+// )
