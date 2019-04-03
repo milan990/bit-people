@@ -5,6 +5,9 @@ import { Header } from './components/header';
 import { Footer } from './components/footer';
 import Main from './services/main';
 import About from './components/About';
+import { Switch, Route } from "react-router-dom";
+
+
 
 class App extends Component {
   constructor(props) {
@@ -92,14 +95,18 @@ class App extends Component {
     return (
       <>
         <Header event={this.gridView} reload={this.fetchUsers} about={this.aboutPage} />
-        <div hidden={this.state.about}>
-          <About />
-        </div>
+        {/* <div hidden={this.state.about}> */}
+        <Switch>
+          <Route exact path='/about' component={About}/>
+          <Route exact path='/' component={()=><Main users={this.state.users2} list={this.state.listView} users1={this.state.users1} search={this.searchUsers}
+          male={this.genStatistic().male} female={this.genStatistic().female}/>}/>
+          </Switch>
+        {/* </div>
         <div hidden={!this.state.about} className="row grid">
           <input hidden={this.state.inputVisible} onChange={this.searchUsers} type="search" className="input" placeholder="Search" ></input>
           <p className="genStat offset-8">Male: {this.genStatistic().male} Female: {this.genStatistic().female}</p>
           <Main users={this.state.users2} list={this.state.listView} users1={this.state.users1} />
-        </div>
+        </div> */}
         <Footer time={this.calculateTime()} />
       </>
     )

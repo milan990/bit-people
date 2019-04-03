@@ -27,7 +27,11 @@ const Main = (props) => {
         )
     }
 
-    const postsListJSX = props.users.map(user => (
+    const postsListJSX =
+    <div className = "row grid">
+     <input  onChange={props.search} type="search" className="input" placeholder="Search" ></input>
+    <p className="genStat offset-8">Male: {props.male} Female: {props.female}</p>
+    {props.users.map(user => (
         <div className={`${user.gender} users col-12`} key={user.loginName} >
             <div className="card blue-grey darken-1">
                 <div className="card-content white-text">
@@ -43,8 +47,13 @@ const Main = (props) => {
         </div >
 
 
-    ))
-    const postsGridJSX = props.users.map(user => (
+    ))}
+    </div>
+    const postsGridJSX = 
+    <div className="row grid">
+     <input  onChange={props.search} type="search" className="input" placeholder="Search" ></input>
+    <p className="genStat offset-8">Male: {props.male} Female: {props.female}</p>
+    {props.users.map(user => (
         <div className={`${user.gender} users col-4`} key={user.loginName} >
             <div className="card">
                 <div className="card-image">
@@ -61,7 +70,8 @@ const Main = (props) => {
 
 
     )
-    )
+    )}
+    </div>
     if (props.list === true) {
         return postsListJSX
     } else {
