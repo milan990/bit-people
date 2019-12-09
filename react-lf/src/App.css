@@ -1,0 +1,161 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+/* .container {
+  width: 80%;
+  margin: 0 auto;
+} */
+
+header {
+  background-color: brown;
+  color: white;
+  /* butto */
+  justify-content: center;
+  align-items:center;
+  padding: 0 12%;
+  margin-bottom: 2%;
+  height: 100px;
+  
+}
+
+/* header a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3em;
+} */
+
+footer {
+  background-color: brown;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5%;
+  margin-top: 1%;
+  padding-right: 5%;
+}
+
+.avatar {
+  border-radius: 50%;
+  /* border: lightcoral 1px solid; */
+
+}
+
+.user{
+  display: flex;
+  align-items:center;
+  padding-left: 1%;
+  border-bottom: solid 1px lightgrey;
+}
+
+/* .female {
+  background-color: pink;
+} */
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.search {
+  margin-bottom: 0.5%;
+  padding-left: 11%;
+}
+
+.search input {
+  border: none;
+  border-bottom: solid 1px gray;
+  width: 85%;
+  font-size: 1.5em;
+}
+
+.user>div{
+  margin-right: 1%;
+}
+
+.user div p {
+  margin: 3%;
+}
+
+.user div :first-child {
+  font-weight: bold;
+}
+
+.row {
+  width: 80%;
+}
+
+.grid {
+  margin: 0 auto;
+}
+.card{
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+button{
+  float: right;
+  margin-left: 0.5%;
+  color: darkgreen;
+}
+h2{
+  text-align: center;
+}
+.female{
+  background: #ffebee;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+.About{
+  text-align: center;
+}
+p{
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.3em;
+}
+.searchRes{
+  text-align: center;
+  
+}
+.noResult{
+  margin: 0 auto;
+}
+
+.genStat {
+  color: gray;
+  text-align:  right;
+  padding-bottom: 1.2%;
+  padding-right: 1.2%;
+}
